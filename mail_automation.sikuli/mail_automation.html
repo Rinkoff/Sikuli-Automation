@@ -1,0 +1,111 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>mail_automation.sikuli</h2> <a href="mail_automation.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+receiver = <span class="skw">input</span>(<span class="str">"Who do you want to receive this message:"</span>)
+
+subject = <span class="skw">input</span>(<span class="str">"Enter an email subject:"</span>)
+
+message = <span class="skw">input</span>(<span class="str">"Enter your message here:"</span>)
+
+
+
+<span class="skw">type</span>(Key.WIN)
+<span class="skw">type</span>(<span class="str">"Chrome"</span>)
+<span class="skw">type</span>(Key.ENTER)
+<span class="skw">sleep</span>(<span class="dig">1</span>)
+<span class="skw">type</span>(<span class="str">"https://mail.google.com/mail/u/0/#inbox"</span>)
+<span class="skw">type</span>(Key.ENTER)
+
+
+<span class="kw">if</span> exists(<img src="1694604151323.png" />):
+    <span class="skw">click</span>(Pattern(<img src="1694604167881.png" />).targetOffset(-<span class="dig">226</span>,<span class="dig">82</span>))
+    password = <span class="skw">input</span>(<span class="str">"Enter your password:"</span>)
+
+    <span class="skw">click</span>(Pattern(<img src="1694604320106.png" />).targetOffset(<span class="dig">16</span>,-<span class="dig">63</span>))
+
+    <span class="skw">type</span>(password)
+
+
+<span class="skw">click</span>(<img src="1694604397846.png" />)
+
+<span class="kw">print</span> receiver
+
+<span class="skw">type</span>(receiver)
+<span class="skw">type</span>(Key.TAB)
+<span class="skw">type</span>(subject)
+<span class="skw">type</span>(Key.TAB)
+<span class="skw">type</span>(message)
+
+<span class="skw">click</span>(<img src="1694604496101.png" />)
+</pre>
+</body>
+</html>
